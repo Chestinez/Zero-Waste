@@ -1,0 +1,455 @@
+/*GLOBAL STYLES*/
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  max-width: 1920px;
+  min-height: 100vh;
+  background: linear-gradient(to bottom, rgba(5, 5, 5, 0.88) 40%, rgba(168, 79, 5, 0.9) 60%), url("../assets/stardust.png"); /*Image Source: https://www.transparenttextures.com/*/
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat, repeat;
+  font-size: 16px;
+  font-family: 'Segoe UI', sans-serif;
+  color: rgb(241, 224, 124);
+}
+
+img {
+  width: 100%;
+  max-width: 700px;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0.5px 0.5px 15px 3px rgba(254, 217, 246, 0.8), 0.5px 0.5px 15px 3px rgba(244, 189, 189, 0.8) ;
+}
+
+
+header {
+  background: linear-gradient(to right, rgba(83, 47, 2, 0.5) 40%, rgba(67, 2, 2, 0.5) 60%), url("../assets/dark-wood.png"); /*Image Source: https://www.transparenttextures.com/*/
+  width: 100%;
+  height: 400px;
+  box-shadow: 0px 0px 11px rgba(254, 217, 246, 0.8), 0px 0px 11px rgba(244, 189, 189, 0.8) ;
+  border-bottom: 10px solid black;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+
+
+/*NAVBAR*/
+nav {
+  background: linear-gradient(to bottom, rgb(40, 1, 1), rgb(71, 16, 16));
+  box-shadow: 0px 0px 11px rgba(254, 217, 246, 0.8), 0px 0px 11px rgba(244, 189, 189, 0.8) ;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  width: 100%;
+}
+
+nav h1 {
+  font-size: 2.5rem;
+  font-weight: 900;
+  letter-spacing: 2px;
+  color: rgb(255, 215, 0);
+  text-shadow:
+    0 0 4.5px rgba(255, 215, 0, 0.85),
+    0 0 11px rgba(255, 140, 0, 0.65);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+nav li {
+  height: 50px;
+}
+
+nav a {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  padding: 13px 33px;
+  color: rgb(191, 136, 63);
+  font-weight: bold;
+  font-size: 18px;
+  border-radius: 15px;
+  transition: all 0.4s ease-in-out;
+}
+
+nav a:hover {
+  box-shadow:
+    1px 1px 3px rgba(255, 215, 0, 1),
+    2px 2px 6px rgba(255, 223, 70, 0.9),
+    5px 5px 10px rgba(255, 240, 150, 0.7),
+    6px 6px 15px rgba(255, 200, 0, 0.6);
+  color: rgba(255, 215, 0, 1);
+  text-shadow:
+    0 0 3px rgba(255, 215, 0, 1),
+    0 0 5px rgba(255, 223, 70, 0.9),
+    0 0 11px rgba(255, 240, 150, 0.7),
+    0 0 15px rgba(255, 200, 0, 0.6);
+}
+
+/*SECTION 0*/
+.section0 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 50px auto;
+  width: 100%;
+}
+
+.section0 h1 {
+  font-family: "Anton SC", sans-serif; /*Imported font from Google Fonts*/
+  font-weight: 900;
+  letter-spacing: 5px;
+  font-size: 64px;
+  text-align: center;
+  color: rgba(255, 215, 0, 1);
+  text-shadow:
+    0 0 4.5px rgba(255, 215, 0, 0.85),
+    0 0 11px rgba(255, 140, 0, 0.65);
+  border: 5px outset #FFA500;
+  box-shadow: 1.5px 1.5px 20px 6px gold, 1.5px 1.5px 15px 5px goldenrod;
+  max-width: 90%;
+  padding: 60px 110px;
+}
+
+
+/*MAIN CONTAINER*/
+main {
+  max-width: 1300px;
+  padding: 20px;
+  margin: 0 auto;
+}
+
+.section1, .section2, .section3{
+  padding: 40px 30px ;
+  width: 100%;
+  margin: 30px auto;
+}
+
+.section1 h1, .section2 h1, .section3 h1{
+  color: greenyellow;
+  text-shadow: 
+    1px 1px 5px rgba(98, 234, 116, 0.808),
+    1px 1px 11.5px rgba(50, 129, 4, 0.89);
+  text-align: center;
+  font-size: 50px;
+}
+
+/*SECTION 1*/
+.section1 h1 {
+  margin: 50px auto;
+}
+
+
+/*Section1 INFO CARDS (Flipping Cards)*/
+.info-cards {
+  width: 100%;
+  margin: 100px auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  perspective: 1000px;
+}
+
+.info-card {
+  position: relative;
+  width: 300px;
+  height: 450px;
+  border-radius: 10px;
+  background-color: transparent;
+  border: none;
+}
+
+.infocard-inner {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s ease;
+  transform-style: preserve-3d;
+}
+
+.info-card:hover .infocard-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  border: 2.5px solid peachpuff;
+  border-radius: 15px;
+  box-shadow: 1px 1px 10px rgba(255, 167, 38, 0.75), 1px 1px 10px gold;
+}
+
+.card-front {
+  background: linear-gradient(to bottom right, #ffa500, #f94605);
+  color: black;
+}
+
+.card-back {
+  background: linear-gradient(to bottom right, rgb(98, 158, 219), #00008B);
+  color: azure;
+  transform: rotateY(180deg);
+  text-align: center;
+}
+
+.card-back q {
+  font-weight: bold;
+}
+
+.card-back p {
+  padding: 20px;
+}
+
+/*Section2 styles(Table + text)*/
+
+.section2 .transition-text1{
+  margin-bottom: 60px;
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+}
+
+.section2 .text-container p{
+  width: 400px;
+  margin-top: 35px;
+  font-size: 18.5px;
+}
+
+.section2 .text-container{
+  display: flex;
+  flex-direction: column;
+}
+
+.portion1, .portion2{
+  display: flex;
+  flex-direction: row;
+}
+
+.section2 .img-container{
+  display: flex;
+  flex-direction: row;
+}
+
+.section2 img{
+  height: 260px;
+  width: 380px;
+  margin-top: 60px;
+  margin-bottom: 20px;
+  margin-left: 15px;
+  margin-right: 10px;
+}
+
+.section2 .transition-text2{
+  margin-top: 60px;
+}
+
+.section2 h1{
+  margin: 20px auto;
+} 
+
+table, th, td {
+  border: 3px solid black;
+  border-collapse: collapse;
+  padding: 20px;
+  border-radius: 15px;
+}
+
+table {
+  width: 100%;
+  box-shadow: 10px 10px 11px rgba(234, 172, 98, 0.95);
+  color: #000;
+}
+
+thead {
+  background-color: antiquewhite;
+}
+
+tbody {
+  background-color: burlywood;
+}
+
+/*section3*/
+.section3 {
+  padding: 60px 20px;
+}
+
+.section3 img {
+  height: 265px;
+  width: 350px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.section3 h1 {
+  text-align: center;
+  width: 100%;
+  margin: 60px auto 30px;
+}
+
+.transition-text3 {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.example-columns {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  gap: 30px;
+  position: relative;
+  margin-top: 50px;
+  padding: 20px;
+}
+
+.left-column,
+.right-column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/*flip cards on examples of Real-World Successes in Zero-Waste*/
+.example-card {
+  background: linear-gradient(to bottom left, rgba(255, 218, 185, 0.7), rgba(255, 228, 196, 0.7)), url('../assets/dark-wood.png'); /*Image Source: https://www.transparenttextures.com/*/
+  padding: 40px 30px;
+  border-radius: 18px;
+  color: maroon;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px;
+  width: 500px;
+}
+
+.example-card p {
+  width: 500px;
+}
+
+.example-card h2{
+  text-shadow:
+    0 0 4.5px rgba(255, 215, 0, 0.85),
+    0 0 11px rgba(255, 140, 0, 0.65);
+}
+
+.flip-card {
+  perspective: 1000px;
+  width: 560px;
+  height: 390px;
+  position: relative;
+  z-index: 1; 
+  transition: all 0.5s ease-in-out;
+}
+
+.flip-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition: all 0.5s ease-in-out;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-inner {
+  transform: rotateY(180deg) scale(1.1);
+  z-index: 10;
+}
+
+.flip-card:hover{
+  display: flex;
+  justify-content: center;
+  z-index: 999;
+  margin: 40px;
+}
+
+.flip-front,
+.flip-back {
+  background: 
+    linear-gradient(to bottom left, rgba(255, 218, 185, 0.7), rgba(255, 228, 196, 0.7)),
+    url('../assets/dark-wood.png'); /*Image Source: https://www.transparenttextures.com/*/
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 18px;
+  overflow: hidden;
+  object-fit: cover;
+  box-shadow: 1px 4px 12px 10px rgba(104, 75, 4, 0.85);
+}
+
+.example-columns {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  padding-bottom: 100px;
+}
+
+.card-container {
+  width: 600px;
+  height: 400px;
+  position: relative;
+}
+
+.flip-front {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flip-back {
+  transform: rotateY(180deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flip-front img, .flip-back img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 18px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+.flip-front .card-text, .flip-back .card-text{
+  z-index: 1;
+  background-color: rgba(240, 248, 255, 0.687);
+  padding: 20px;
+  border-radius: 20px;
+}
+
+/*FOOTER*/
+footer {
+  height: 50px;
+  background: linear-gradient(to top, rgb(40, 1, 1), rgb(71, 16, 16));
+  box-shadow: 0px 0px 11px rgba(254, 217, 246, 0.8), 0px 0px 11px rgba(244, 189, 189, 0.8), url('../assets/dark-wood.png');
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  margin-top: 20px;
+}
